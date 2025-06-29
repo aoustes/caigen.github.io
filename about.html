@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>教学小菜煎 - 关于我们</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">教学小菜煎</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="recipes.html">菜谱</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">关于我们</h1>
+        <p>教学小菜煎成立于 2003 年，致力于为大家提供丰富、美味、健康的菜谱。</p>
+        
+        <!-- 成品展示 -->
+        <section class="product-showcase">
+            <h2>我们的作品</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="https://placekitten.com/300/200" alt="团队照片">
+                    <h3>专业团队</h3>
+                    <p>我们的专业厨师团队</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://placekitten.com/300/200" alt="工作环境">
+                    <h3>工作环境</h3>
+                    <p>我们的现代化厨房</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 功能选择 -->
+        <section class="function-selection">
+            <h2>我们的服务</h2>
+            <div class="function-grid">
+                <div class="function-item">
+                    <i class="fas fa-book"></i>
+                    <h3>菜谱开发</h3>
+                    <p>开发各种美味菜谱</p>
+                </div>
+                <div class="function-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>烹饪教学</h3>
+                    <p>提供专业烹饪课程</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 内容反馈 -->
+        <section class="content-feedback">
+            <h2>意见反馈</h2>
+            <form>
+                <textarea placeholder="请留下您对我们的建议..."></textarea>
+                <button type="submit" class="button">提交反馈</button>
+            </form>
+        </section>
+        
+        <!-- 友情链接 -->
+        <section class="friend-links">
+            <h2>合作伙伴</h2>
+            <ul>
+                <li><a href="#">美食协会</a></li>
+                <li><a href="#">烹饪学校</a></li>
+            </ul>
+        </section>
+        
+        <!-- 当前时间 -->
+        <div class="current-time">当前时间: <span id="time-display"></span></div>
+        
+        <!-- 日夜模式切换 -->
+        <div class="mode-toggle">
+            <button id="mode-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>夜间模式</span>
+            </button>
+        </div>
+        
+        <script>
+            // 日夜模式切换
+            const modeToggleBtn = document.getElementById('mode-toggle-btn');
+            
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                updateButtonText(true);
+            }
+            
+            modeToggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+                
+                updateButtonText(document.body.classList.contains('dark-mode'));
+            });
+            
+            function updateButtonText(isDarkMode) {
+                const icon = modeToggleBtn.querySelector('i');
+                const text = modeToggleBtn.querySelector('span');
+                
+                if (isDarkMode) {
+                    icon.className = 'fas fa-sun';
+                    text.textContent = '日间模式';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    text.textContent = '夜间模式';
+                }
+            }
+        </script>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2003 - 2025 教学小菜煎. 保留所有权利。</p>
+    </footer>
+    
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('time-display').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>

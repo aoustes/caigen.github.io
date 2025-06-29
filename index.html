@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>教学小菜煎 - 菜谱站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">教学小菜煎</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="recipes.html">菜谱</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header class="header">
+            <h1>开始于2003，前进至2025</h1>
+            <p>网站努力维护中，有彩蛋哦！</p>
+        </header>
+
+        <div class="main-visual">
+            <img src="/image/菜就多练.png" alt="主视觉图片">
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>我们的安全性</h3>
+                <p>提供最高级别的安全保护，让您安心使用</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h3>最完善的支援</h3>
+                <p>24小时在线支持，随时解答您的问题</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-rocket"></i>
+                <h3>稳定的平台</h3>
+                <p>持续稳定运行，为您提供可靠服务</p>
+            </div>
+        </div>
+
+        <section class="why-choose">
+            <h2>为什么选择我们</h2>
+            <div class="choose-features">
+                <div class="choose-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>专业的服务团队</h3>
+                        <p>不提供技术支持和服务</p>
+                    </div>
+                </div>
+                <div class="choose-feature">
+                    <i class="fas fa-server"></i>
+                    <div>
+                        <h3>高级的人工系统</h3>
+                        <p>简单易用，功能强大的人机系统</p>
+                    </div>
+                </div>
+                <div class="choose-feature">
+                    <i class="fas fa-lock"></i>
+                    <div>
+                        <h3>安全防护</h3>
+                        <p>多重安全机制，保护您的人身安全</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>114514+</h3>
+                    <p>注册用户</p>
+                </div>
+                <div class="stat-item">
+                    <h3>250+</h3>
+                    <p>在线用户</p>
+                </div>
+                <div class="stat-item">
+                    <h3>38+</h3>
+                    <p>日活跃用户</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <h2>最新动态</h2>
+            <div class="news-cards">
+                <div class="news-card">
+                    <img src="image/菜煎.webp" alt="新闻图片">
+                    <h3>新菜谱上线</h3>
+                    <p>我们刚刚上线了一系列新菜谱，快来尝试！</p>
+                </div>
+                <div class="news-card">
+                    <img src="image/菜煎.webp" alt="新闻图片">
+                    <h3>网站升级</h3>
+                    <p>我们对网站进行了升级，提升了用户体验。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="action-button">
+            <a href="#" class="button">了解更多</a>
+        </div>
+    </div>
+        <div class="mode-toggle">
+            <button id="mode-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>夜间模式</span>
+            </button>
+        </div>
+
+    <footer class="footer">
+        <p>&copy; 2003 - 2025 教学小菜煎. 保留所有权利。</p>
+    </footer>
+
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('time-display').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        <!-- 日夜模式切换 -->
+        <div class="mode-toggle">
+            <button id="mode-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>夜间模式</span>
+            </button>
+        </div>
+    </script>
+</body>
+</html>
+
+<script>
+    // 日夜模式切换
+    const modeToggleBtn = document.getElementById('mode-toggle-btn');
+    
+    // 检查本地存储中的模式设置
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        updateButtonText(true);
+    }
+    
+    modeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // 保存用户偏好到本地存储
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+        
+        updateButtonText(document.body.classList.contains('dark-mode'));
+    });
+    
+    function updateButtonText(isDarkMode) {
+        const icon = modeToggleBtn.querySelector('i');
+        const text = modeToggleBtn.querySelector('span');
+        
+        if (isDarkMode) {
+            icon.className = 'fas fa-sun';
+            text.textContent = '日间模式';
+        } else {
+            icon.className = 'fas fa-moon';
+            text.textContent = '夜间模式';
+        }
+    }
+</script>

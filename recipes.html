@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>教学小菜煎 - 菜谱</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">教学小菜煎</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="recipes.html">菜谱</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">精选菜谱</h1>
+        
+        <!-- 成品展示 -->
+        <section class="product-showcase">
+            <h2>菜品成品</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="image/OIP.webp" alt="宫保鸡丁成品">
+                    <h3>宫保鸡丁</h3>
+                    <p>麻辣鲜香，鸡肉鲜嫩</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="image/OIP1.webp" alt="糖醋排骨成品">
+                    <h3>糖醋排骨</h3>
+                    <p>色泽红亮，酸甜可口</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 功能选择 -->
+        <section class="function-selection">
+            <h2>菜谱功能</h2>
+            <div class="function-grid">
+                <div class="function-item">
+                    <i class="fas fa-search"></i>
+                    <h3>搜索菜谱</h3>
+                    <p>按食材或口味搜索</p>
+                </div>
+                <div class="function-item">
+                    <i class="fas fa-filter"></i>
+                    <h3>筛选菜谱</h3>
+                    <p>按难度或时间筛选</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 内容反馈 -->
+        <section class="content-feedback">
+            <h2>菜谱反馈</h2>
+            <form>
+                <textarea placeholder="请留下您对菜谱的评价..."></textarea>
+                <button type="submit" class="button">提交评价</button>
+            </form>
+        </section>
+        
+        <!-- 友情链接 -->
+        <section class="friend-links">
+            <h2>相关资源</h2>
+            <ul>
+                <li><a href="#">食材购买</a></li>
+                <li><a href="#">厨具推荐</a></li>
+            </ul>
+        </section>
+        
+        <!-- 当前时间 -->
+        <div class="current-time">当前时间: <span id="time-display"></span></div>
+        
+        <!-- 日夜模式切换 -->
+        <div class="mode-toggle">
+            <button id="mode-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>夜间模式</span>
+            </button>
+        </div>
+        <script>
+// 移除重复声明，下方已有相同功能的代码
+    
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        updateButtonText(true);
+    }
+    
+    modeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+        
+        updateButtonText(document.body.classList.contains('dark-mode'));
+    });
+    
+    function updateButtonText(isDarkMode) {
+        const icon = modeToggleBtn.querySelector('i');
+        const text = modeToggleBtn.querySelector('span');
+        
+        if (isDarkMode) {
+            icon.className = 'fas fa-sun';
+            text.textContent = '日间模式';
+        } else {
+            icon.className = 'fas fa-moon';
+            text.textContent = '夜间模式';
+        }
+    }
+        </script>
+        
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <img src="image/OIP3.webp" alt="示例菜谱">
+                <h2>宫保鸡丁</h2>
+                <p>经典川菜，麻辣鲜香，鸡肉鲜嫩。</p>
+            </div>
+            <div class="recipe-card">
+                <img src="image/OIP2.webp" alt="示例菜谱">
+                <h2>糖醋排骨</h2>
+                <p>色泽红亮，酸甜可口，肉质鲜嫩。</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2003 - 2025 教学小菜煎. 保留所有权利。</p>
+    </footer>
+    
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('time-display').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 日夜模式切换
+        const modeToggleBtn = document.getElementById('mode-toggle-btn');
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

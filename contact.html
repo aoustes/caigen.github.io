@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>教学小菜煎 - 联系我们</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">教学小菜煎</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="recipes.html">菜谱</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">联系我们</h1>
+        
+        <!-- 成品展示 -->
+        <section class="product-showcase">
+            <h2>我们的联系方式</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="image/菜煎gpt.png" alt="办公室照片">
+                    <h3>办公地点</h3>
+                    <p>欢迎来访我们的办公室</p>
+                </div>
+                <div class="showcase-item">
+                    <h3>客服团队</h3>
+                    <p>专业的客服人员</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 功能选择 -->
+        <section class="function-selection">
+            <h2>联系方式</h2>
+            <div class="function-grid">
+                <div class="function-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>电子邮件</h3>
+                    <p>admin@aoustes.com</p>
+                </div>
+                <div class="function-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>电话</h3>
+                    <p>150-7087-3658</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 内容反馈 -->
+        <section class="content-feedback">
+            <h2>留言板</h2>
+            <form>
+                <textarea placeholder="请留下您的留言..."></textarea>
+                <button type="submit" class="button">提交留言</button>
+            </form>
+        </section>
+        
+        <!-- 友情链接 -->
+        <section class="friend-links">
+            <h2>相关链接</h2>
+            <ul>
+                <li><a href="#">客服中心</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+        </section>
+        
+        <!-- 当前时间 -->
+        <div class="current-time">当前时间: <span id="time-display"></span></div>
+        
+        <!-- 日夜模式切换 -->
+        <div class="mode-toggle">
+            <button id="mode-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>夜间模式</span>
+            </button>
+        </div>
+        <script>
+// 移除重复声明，保留后续逻辑即可。注意需要删除文件底部重复的日夜模式切换代码。
+    
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        updateButtonText(true);
+    }
+    
+    modeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+        
+        updateButtonText(document.body.classList.contains('dark-mode'));
+    });
+    
+    function updateButtonText(isDarkMode) {
+        const icon = modeToggleBtn.querySelector('i');
+        const text = modeToggleBtn.querySelector('span');
+        
+        if (isDarkMode) {
+            icon.className = 'fas fa-sun';
+            text.textContent = '日间模式';
+        } else {
+            icon.className = 'fas fa-moon';
+            text.textContent = '夜间模式';
+        }
+    }
+        </script>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2003 - 2025 教学小菜煎. 保留所有权利。</p>
+    </footer>
+    
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('time-display').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 日夜模式切换
+        const modeToggleBtn = document.getElementById('mode-toggle-btn');
+        modeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
