@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教学小菜煎 - 关于我们</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="caigen-container">
+    <nav class="caigen-navbar">
+        <div class="caigen-logo">教学小菜煎</div>
+        <ul class="caigen-nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="recipes.html">菜谱</a></li>
+            <li><a href="abouts.html">关于我们</a></li>
+            <li><a href="contacts.html">联系我们</a></li>
+        </ul>
+    </nav>
+    <div class="caigen-inner-container">
+        <h1 class="caigen-page-title">关于我们</h1>
+        <p>教学小菜煎成立于 2003 年，致力于为大家提供丰富、美味、健康的菜谱。</p>
+        
+        <!-- 成品展示 -->
+        <section class="caigen-product-showcase">
+            <h2>我们的作品</h2>
+            <div class="caigen-showcase-grid">
+                <div class="caigen-showcase-item">
+                    <img src="assets/images/菜煎gpt2.png" alt="团队照片">
+                    <h3>专业团队</h3>
+                    <p>我们的专业厨师团队</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 功能选择 -->
+        <section class="caigen-function-selection">
+            <h2>我们的服务</h2>
+            <div class="caigen-function-grid">
+                <div class="caigen-function-item">
+                    <i class="fas fa-book"></i>
+                    <h3>菜谱开发</h3>
+                    <p>开发各种美味菜谱</p>
+                </div>
+                <div class="caigen-function-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>烹饪教学</h3>
+                    <p>提供专业烹饪课程</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 内容反馈 -->
+        <section class="caigen-content-feedback">
+            <h2>意见反馈</h2>
+            <form>
+                <textarea placeholder="请留下您对我们的建议..."></textarea>
+                <button type="submit" class="caigen-button">提交反馈</button>
+            </form>
+        </section>
+        
+        <!-- 友情链接 -->
+        <section class="caigen-friend-links">
+            <h2>合作伙伴</h2>
+            <ul>
+                <li><a href="#">美食协会</a></li>
+                <li><a href="#">烹饪学校</a></li>
+            </ul>
+        </section>
+        
+        <!-- 当前时间 -->
+        <div class="caigen-current-time">当前时间: <span id="time-display"></span></div>
+        
+        <!-- 日夜模式切换 -->
+        <div class="caigen-mode-toggle">
+            <button id="mode-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>夜间模式</span>
+            </button>
+        </div>
+    </div>
+    <footer class="caigen-footer">
+        <p>&copy; 2003 - 2025 教学小菜煎. 保留所有权利。</p>
+    </footer>
+    
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('time-display').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 日夜模式切换
+        const modeToggleBtn = document.getElementById('mode-toggle-btn');
+        
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.querySelector('.caigen-container').classList.add('caigen-dark-mode');
+            updateButtonText(true);
+        }
+        
+        modeToggleBtn.addEventListener('click', () => {
+            document.querySelector('.caigen-container').classList.toggle('caigen-dark-mode');
+            
+            if (document.querySelector('.caigen-container').classList.contains('caigen-dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+            
+            updateButtonText(document.querySelector('.caigen-container').classList.contains('caigen-dark-mode'));
+        });
+        
+        function updateButtonText(isDarkMode) {
+            const icon = modeToggleBtn.querySelector('i');
+            const text = modeToggleBtn.querySelector('span');
+            
+            if (isDarkMode) {
+                icon.className = 'fas fa-sun';
+                text.textContent = '日间模式';
+            } else {
+                icon.className = 'fas fa-moon';
+                text.textContent = '夜间模式';
+            }
+        }
+    </script>
+</body>
+</html>
