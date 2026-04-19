@@ -1,0 +1,513 @@
+/* caigen 项目专用样式 - 添加命名空间避免冲突 */
+.caigen-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* 响应式设计 */
+@media only screen and (max-width: 768px) {
+    .caigen-navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .caigen-nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .caigen-nav-links li {
+        margin: 5px 0;
+    }
+    
+    .caigen-features, .caigen-stats-container, .caigen-news-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .caigen-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .caigen-main-visual img, .caigen-news-card img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .caigen-header {
+        padding: 20px 0;
+    }
+    
+    .caigen-feature-card, .caigen-news-card {
+        padding: 15px;
+    }
+    
+    .caigen-why-choose, .caigen-latest-news {
+        padding: 20px;
+    }
+}
+
+.caigen-navbar {
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.caigen-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.caigen-nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.caigen-nav-links li {
+    margin-left: 20px;
+}
+
+.caigen-nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.caigen-nav-links a:hover {
+    color: #f0f0f0;
+}
+
+.caigen-inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.caigen-header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.caigen-header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.caigen-header p {
+    color: #666;
+    font-size: 1.2em;
+}
+
+.caigen-main-visual {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.caigen-main-visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.caigen-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.caigen-feature-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.caigen-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.caigen-feature-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.caigen-feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.caigen-why-choose {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.caigen-why-choose h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.caigen-choose-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.caigen-choose-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.caigen-choose-feature i {
+    color: #4CAF50;
+    font-size: 24px;
+}
+
+.caigen-stats {
+    background: linear-gradient(to right, #333, #666);
+    color: white;
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.caigen-stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.caigen-stat-item h3 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.caigen-stat-item p {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+.caigen-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.caigen-button:hover {
+    background-color: #45a049;
+}
+
+.caigen-action-button {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.caigen-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.caigen-latest-news {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.caigen-latest-news h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.caigen-news-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.caigen-news-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.caigen-news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.caigen-news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.caigen-news-card h3 {
+    padding: 15px 15px 0;
+    color: #333;
+}
+
+.caigen-news-card p {
+    padding: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.caigen-page-title {
+    text-align: center;
+    margin: 40px 0;
+    color: #333;
+}
+
+.caigen-recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.caigen-recipe-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.caigen-recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.caigen-recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.caigen-recipe-card h2 {
+    padding: 15px 15px 0;
+    color: #333;
+}
+
+.caigen-recipe-card p {
+    padding: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.caigen-contact-info {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.caigen-contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.caigen-contact-info i {
+    margin-right: 10px;
+    color: #4CAF50;
+}
+
+/* 成品展示样式 */
+.caigen-product-showcase {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.caigen-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.caigen-showcase-item {
+    text-align: center;
+}
+
+.caigen-showcase-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* 功能选择样式 */
+.caigen-function-selection {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.caigen-function-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.caigen-function-item {
+    text-align: center;
+}
+
+.caigen-function-item i {
+    font-size: 32px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* 内容反馈样式 */
+.caigen-content-feedback {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.caigen-content-feedback textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 友情链接样式 */
+.caigen-friend-links {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.caigen-friend-links ul {
+    list-style: none;
+}
+
+.caigen-friend-links li {
+    margin-bottom: 10px;
+}
+
+.caigen-friend-links a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.caigen-friend-links a:hover {
+    text-decoration: underline;
+}
+
+/* 当前时间样式 */
+.caigen-current-time {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+/* 日夜模式切换按钮样式 */
+.caigen-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+.caigen-mode-toggle #mode-toggle-btn {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.caigen-mode-toggle #mode-toggle-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.caigen-mode-toggle #mode-toggle-btn i {
+    font-size: 18px;
+}
+
+/* 日夜模式图标 */
+.caigen-dark-mode .caigen-mode-toggle #mode-toggle-btn {
+    background-color: #666;
+}
+
+.caigen-dark-mode .caigen-mode-toggle #mode-toggle-btn:hover {
+    background-color: #777;
+}
+
+/* 日夜模式样式 */
+.caigen-dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.caigen-dark-mode .caigen-product-showcase,
+.caigen-dark-mode .caigen-function-selection,
+.caigen-dark-mode .caigen-content-feedback,
+.caigen-dark-mode .caigen-friend-links,
+.caigen-dark-mode .caigen-latest-news,
+.caigen-dark-mode .caigen-why-choose {
+    background-color: #444;
+}
+
+.caigen-dark-mode .caigen-feature-card,
+.caigen-dark-mode .caigen-news-card {
+    background-color: #555;
+}
+
+.caigen-dark-mode h1, .caigen-dark-mode h2, .caigen-dark-mode h3 {
+    color: white;
+}
+
+.caigen-dark-mode .caigen-button,
+.caigen-dark-mode .caigen-mode-toggle #mode-toggle-btn {
+    background-color: #666;
+}
+
+.caigen-dark-mode .caigen-button:hover,
+.caigen-dark-mode .caigen-mode-toggle #mode-toggle-btn:hover {
+    background-color: #777;
+}
